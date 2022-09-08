@@ -2,62 +2,63 @@
 {% load  static %}
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <button
+      class="navbar-toggler navbar-toggler-right"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% comment %} <a class="navbar-brand ms-4" href="/">
+        <img src="{% static 'blog/images/logo.png' %}" alt="" width="35" height="35">
+    </a> {% endcomment %}
     <div class="container-fluid ">
         
         <div class="d-flex ">
-            <a class="navbar-brand" href="/">
+             <a class="navbar-brand" href="/">
                 <img src="{% static 'blog/images/logo.png' %}" alt="" width="35" height="35">
-            </a>
+            </a>  
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %} ">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/create-post">Post</a>
-              </li>
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %} ">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/create-post">Post</a>
+                </li>
+              </ul>
         </div>
         <div>
-            <ul class="navbar-nav"> 
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li> 
-            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if request.user.is_authenticated %} {% if request.user.is_superuser %}
+          
+                <li class="nav-item active">
+                  <a class="nav-link" href="/admin/">Admin</a>
+                </li>
+                {% endif %}
+          
+                <li class="nav-item active"> 
+                  <a class="nav-link" href="{% url 'user_logout' %}">Log Out</a>
+                </li>
+                {% else %}
+          
+                <li class="nav-item active"> 
+                  <a class="nav-link" href="{% url 'user_login' %}">Log In</a>
+                </li>
+                {% endif %}
+                <li class="nav-item active"> 
+                  <a class="nav-link" href="{% url 'user_register' %}">Register</a>
+                </li>
+              </ul>
         </div>
-        {% comment %} <ul class="navbar-nav ml-auto">
-            {% if request.user.is_authenticated %} {% if request.user.is_superuser %}
-
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin">Admin</a>
-            </li>
-            <li class="nav-item active">
-                
-                <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a>
-            </li>
-            
-             {% else %}   
-            <li class="nav-item active">
-                
-                <a class="nav-link" href="{% url 'logout_app' %}">Log Out</a>
-            </li>
-            <li>
-                <a class="nav-link" href="">{{ request.user | capfirst }}</a>
-            </li>
-            
-            {% endif %}
-            {% else %}  
-
-            <li class="nav-item active"> 
-                <a class="nav-link" href="{% url 'user_login' %}">Log In</a>
-            </li>
-            <li class="nav-item active"> 
-                <a class="nav-link" href="{% url 'register' %} ">Register</a>
-            </li>
-            {% endif %}
-            
-        </ul> {% endcomment %}
+         
     </div>
 </nav>
+
+
 
 
  

@@ -19,7 +19,11 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-
+    {% if messages %} {% for message in messages %} {% if message.tags == 'success' %}
+    <div class="alert alert-primary container" style="width: 80%;">{{ message }}</div>
+    {% elif message.tags == 'error' %}
+    <div class="alert alert-danger container" style="width: 80%;">{{ message }}</div>
+    {% endif %} {% endfor %} {% endif %} 
     {% block content %}
         
     {% endblock content %}
