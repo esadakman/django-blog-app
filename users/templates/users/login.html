@@ -1,0 +1,25 @@
+{% extends 'templates/base.html' %} 
+{% block title %}Login{% endblock %} 
+{% load crispy_forms_tags %} {% block content %} 
+<div class="d-flex justify-content-center mt-4 ">
+    <div style="width: fit-content; min-width: 400px">
+      {% comment %} {% if request.user.is_authenticated %}
+      <h3>You are already logged in</h3>
+      {% else %} {% endcomment %}
+      <h3 style="text-align: center">Please Login</h3>
+      <hr />
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{ login_form | crispy }}
+        <div class="detailbuttons d-flex justify-content-center my-3">
+          <button class="btn btn-secondary btn-md btn-block mx-5" style="width: 100px" type="submit" aria-pressed="true">Login</button>
+        </div>
+      </form>
+      <hr/>
+      <div class="d-flex justify-content-between" style="font-size: small">
+        <p style="margin-right: 10px">Need an account?</p>
+        <a href="#register">Sign Up Now</a>
+      </div>
+    </div>
+  </div>
+  {% comment %} {% endif %} {% endcomment %}
+{% endblock %}
