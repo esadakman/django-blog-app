@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('profile_pic',)
+        fields = ('image',)
         # exclude= ('user',)
 #exclude dememizin sebebi biz oluşturduğumuz kullanıcının userProfileini oluşturmak iistiyoruz
 #bunu yaptığımız içinde views kısmında register olan kullanıcıyıya userprofile ı kaydettik 

@@ -1,6 +1,6 @@
 {% extends 'templates/base.html' %} {% block content %} {% load crispy_forms_tags %}
 
-<div class="d-flex mt-4 justify-content-center">
+  {% comment %} <div class="d-flex mt-4 justify-content-center">
   <div>
     <h2 style="text-align: center;">Registration Form</h2><hr>
     {% if request.user.is_authenticated %}
@@ -14,10 +14,31 @@
       <div class="detailbuttons d-flex justify-content-center my-3">
         <button class="btn btn-secondary btn-md  btn-block mx-5" style="width: 100px" type="submit" aria-pressed="true">Register</button>
       </div>
-    </form><hr>
+    </form>
     <div class="d-flex" style="font-size: small;">
       <p style="margin-right: 10px;">Already have an account?</p>
     <a href="{% url 'user_login' %}">Sign In</a>
   </div>
 </div>
-{% endif %} {% endblock %}
+{% endif %}  {% endcomment %}
+
+<div class="content-section ">
+  <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <h2 style="text-align: center;">Registration Form</h2><hr>
+          {{register_form | crispy}} 
+          {{form_profile | crispy}} 
+      </fieldset>
+      <div class="form-group d-flex justify-content-center my-3">
+          <button class="btn btn-outline-info" type="submit">Sign Up</button>
+      </div>
+  </form>
+  <div class="border-top pt-3">
+      <small class="text-muted">
+          Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+      </small>
+  </div>
+</div>
+
+ {% endblock %}

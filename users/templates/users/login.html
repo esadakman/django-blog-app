@@ -1,6 +1,7 @@
 {% extends 'templates/base.html' %} 
 {% block title %}Login{% endblock %} 
-{% load crispy_forms_tags %} {% block content %} 
+{% load crispy_forms_tags %} 
+{% block content %} 
 <div class="d-flex justify-content-center mt-4 ">
     <div style="width: fit-content; min-width: 400px">
       {% if request.user.is_authenticated %}
@@ -21,6 +22,23 @@
       </div>
     </div>
   </div>
-  {% endif %}
+  {% endif %}  
+   {% comment %} <div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Log In</legend>
+            {{ login_form | crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Login</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Need An Account? <a class="ml-2" href="{% url 'user_register' %}">Sign Up Now</a>
+        </small>
+    </div>
+</div>   {% endcomment %}
 {% endblock %}
  

@@ -118,6 +118,8 @@ STATIC_URL = '/static/'
 # LOGOUT_REDIRECT_URL = 'home'
 STATIC_ROOT = BASE_DIR / "staticfiles"
  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
@@ -125,5 +127,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = '/home'
-LOGOUT_REDIRECT_URL = '/login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'user_login'
+LOGIN_URL ='user_login'
