@@ -1,4 +1,6 @@
 {% extends "templates/base.html" %}
+{% load crispy_forms_tags %}
+
 {% block content %}
   <article class="media content-section d-flex" >
     <img class="rounded-circle article-img" src="{{ object.author.userprofile.image.url }}">
@@ -16,46 +18,43 @@
       </div>
     {% endif %}
     <br>
-    <h2>Comments...</h2>
-    <br>
+    <h2>Comments...</h2> 
+    <hr>
     {% if not post.comments.all %}
      No comments Yet ...
-     <a href="#">Add One</a>
-     {% else %}
-     <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">Add Comment</a>
-<br>
-      {% for comment in post.comments.all %}
-      <strong>
-        {{comment.name}} -
-        {{comment.date_added}}
+     <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-comment' post.pk %}">Add One</a>
+     {% else %} 
+     {% for comment in post.comments.all %}
+     <strong>
+       {{comment.name}} -
+       {{comment.date_added}}
       </strong>
       <br>
       {{comment.body}}
-<br><hr>
-     {% endfor %}
+      <hr>
+      {% endfor %}
+      <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-comment' post.pk %}">Add Comment</a>
      {% endif %}
      
     </div>
     
   </article>
-
-  <h2>Comments...</h2>
-    {% if not post.comments.all %}
-     No comments Yet ...
-     <a href="#">Add One</a>
-     {% else %}
-      {% for comment in post.comments.all %}
-      <strong>
-        {{comment.name}} -
-        {{comment.date_added}}
-      </strong>
-      <br>
-      {{comment.body}}
-<br><hr>
-     {% endfor %}
-     {% endif %}
+  {% comment %} <div class="d-flex justify-content-center mt-4">
+    <div class="content-section col-md-6">
+        <form method="POST" >
+            {% csrf_token %}
+            <fieldset class="form-group d-flex flex-column gap-1">
+                <legend class="border-bottom mb-1 ">Blog Comment</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group mt-2 text-center">
+                <button class="btn btn-outline-info" type="submit">Add Comment</button>
+            </div>
+        </form>
+    </div>
+</div> {% endcomment %}
+   
      
     </div>
 {% endblock content %}
-
 

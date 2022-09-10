@@ -1,6 +1,8 @@
 from urllib import request
 from django.shortcuts import render , get_object_or_404
-from .models import Post
+
+from blog.forms import CommentForm
+from .models import Post,Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -89,3 +91,15 @@ class PostDetailView(LoginRequiredMixin, DetailView):
         total_likes = stuff.total_likes() 
 
         return total_likes
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'blog/add_comment.html'
+    # fields = '__all__'
+    def form_valid(self,form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    # success_url: reverse_lazy('post-detail')
+    success_url = '/'
