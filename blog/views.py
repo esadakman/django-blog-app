@@ -99,6 +99,7 @@ class AddCommentView(CreateView):
     # fields = '__all__'
     def form_valid(self,form):
         form.instance.post_id = self.kwargs['pk']
+        form.instance.name = self.request.user
         return super().form_valid(form)
 
     # success_url: reverse_lazy('post-detail')
