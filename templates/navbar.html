@@ -19,6 +19,7 @@
           {% if request.user.is_authenticated %} {% if request.user.is_superuser %}
           <a class="nav-link" href="/admin/">Admin</a>
           {% endif %}
+          <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
           <a class="nav-item nav-link" href="{% url 'user_profile' %}">Profile</a>
           <a class="nav-link" href="{% url 'user_logout' %}">Log Out</a>
           {% else %}
