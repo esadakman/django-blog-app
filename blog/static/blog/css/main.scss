@@ -1,0 +1,108 @@
+$bright-color: #fff;
+@mixin bottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+  ul {
+    margin: 0;
+  } 
+  
+#id_content{ 
+  height: 10rem !important;
+  resize: none;
+}
+
+.contain {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+.cardContainer {
+  //   background: url("https://images.unsplash.com/photo-1574007557239-acf6863bc375?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: salmon;
+  background-size: cover;
+  width: 350px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+  .blog__date {
+    margin: .5rem;
+    small {
+      background-color: #00000068;
+      color: white;
+      padding:  .2rem .4rem;
+      border-radius: .3rem;
+    }
+  }
+  .blog__info {
+    * {
+      transition: all 0.4s linear;
+    }
+    @include bottom;
+    bottom: 20%;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 30px;
+    color: $bright-color;
+    span {
+      margin-right: 20px;
+
+      .fa-comment-alt,
+      .fa-heart {
+        &:hover {
+          color: crimson;
+          transform: scale(1);
+          cursor: pointer;
+        }
+      }
+    }
+    i {
+      margin-right: 10px;
+      transform: scale(0.9);
+    }
+  }
+  .blog__profile {
+    background-color: #e4f2fd;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    @include bottom();
+    bottom: 0;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-position: center;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    h2 {
+      color: #334454;
+      font-size: 1.2rem;
+    }
+    p {
+      color: #a1b2bc;
+      font-size: 0.8rem;
+    }
+    p b {
+      font-style: italic;
+    }
+  }
+}

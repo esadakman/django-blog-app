@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444; }
+
+ul {
+  margin: 0; }
+
+#id_content {
+  height: 10rem !important;
+  resize: none; }
+
+.contain {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 2rem; }
+
+.cardContainer {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: salmon;
+  background-size: cover;
+  width: 350px;
+  height: 500px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.315); }
+  .cardContainer .blog__date {
+    margin: .5rem; }
+    .cardContainer .blog__date small {
+      background-color: #00000068;
+      color: white;
+      padding: .2rem .4rem;
+      border-radius: .3rem; }
+  .cardContainer .blog__info {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 20%;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 30px;
+    color: #fff; }
+    .cardContainer .blog__info * {
+      transition: all 0.4s linear; }
+    .cardContainer .blog__info span {
+      margin-right: 20px; }
+      .cardContainer .blog__info span .fa-comment-alt:hover,
+      .cardContainer .blog__info span .fa-heart:hover {
+        color: crimson;
+        transform: scale(1);
+        cursor: pointer; }
+    .cardContainer .blog__info i {
+      margin-right: 10px;
+      transform: scale(0.9); }
+  .cardContainer .blog__profile {
+    background-color: #e4f2fd;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0; }
+    .cardContainer .blog__profile img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-position: center;
+      object-fit: cover;
+      margin-right: 10px; }
+    .cardContainer .blog__profile h2 {
+      color: #334454;
+      font-size: 1.2rem; }
+    .cardContainer .blog__profile p {
+      color: #a1b2bc;
+      font-size: 0.8rem; }
+    .cardContainer .blog__profile p b {
+      font-style: italic; }
+
+/*# sourceMappingURL=main.css.map */

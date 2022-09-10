@@ -28,11 +28,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party
     'crispy_forms',
+    'sass_processor',
     # my Apps
     'users',
     'blog',
 
 ]
+
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap4'
@@ -117,10 +120,17 @@ STATIC_URL = '/static/'
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
 STATIC_ROOT = BASE_DIR / "staticfiles"
- 
+SASS_PROCESSOR_ROOT = STATIC_ROOT 
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
