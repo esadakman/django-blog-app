@@ -116,9 +116,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-# LOGIN_REDIRECT_URL = 'home'
-# LOGOUT_REDIRECT_URL = 'home'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 SASS_PROCESSOR_ROOT = STATIC_ROOT 
 
@@ -140,3 +137,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'user_login'
 LOGIN_URL ='user_login'
+STATIC_URL = '/static/' 

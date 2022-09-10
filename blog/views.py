@@ -60,3 +60,15 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+
+class PostDetailView(LoginRequiredMixin, DetailView):
+    model = Post 
+
+    #? view count part
+    def get_object(self):
+        views = super().get_object()
+        views.blog_view += 1
+        views.save()
+        return views
