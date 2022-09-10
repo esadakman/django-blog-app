@@ -52,38 +52,36 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .blog__info {
-    background-color: #444444;
     * {
       transition: all 0.4s linear;
     }
+    background-color: #00000068;
     @include bottom;
-    bottom: 20%;
+    bottom: 17%;
     display: flex;
     align-items: flex-end;
-    padding: 15px 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7rem;
     color: $bright-color;
-    span {
-      margin-right: 20px;
-
-      .fa-comment-alt,
-      .fa-heart {
-        &:hover {
-          color: crimson;
-          transform: scale(1);
-          cursor: pointer;
-        }
-      }
+    .buttons{
+      display: flex;
+      gap: 1rem;
     }
-    i {
-      margin-right: 10px;
-      transform: scale(0.9);
+    .counters{
+      
+      display: flex; 
+      gap: .7rem;
+      i {
+        margin-right: 5px; 
+      }
     }
   }
   .blog__profile {
     background-color: #e4f2fd;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     @include bottom();
     bottom: 0;
     img {

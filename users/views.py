@@ -15,7 +15,7 @@ def user_register(request):
             return redirect('blog-home')
     else:
         form = UserRegisterForm()
-    return render(request, 'users/register.html', {'form': form})  
+    return render(request, 'users/register.html', {'form': form})   
 
 def user_login(request):
     form = AuthenticationForm(request, data=request.POST)

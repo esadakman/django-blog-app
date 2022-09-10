@@ -1,4 +1,5 @@
-from django.shortcuts import render 
+from urllib import request
+from django.shortcuts import render , get_object_or_404
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
@@ -8,7 +9,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 def home(request):
     context = {
         'posts': Post.objects.all()
@@ -18,6 +20,13 @@ def home(request):
 
 def about(request):
     return render(request, 'blog/about.html') 
+
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
+    # return render( request, 'blog/likes.html', args=[str(pk)])
+
 
 class PostListView(ListView):
     model = Post
@@ -67,8 +76,16 @@ class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post 
 
     #? view count part
-    def get_object(self):
+    def get_object(self,):
         views = super().get_object()
         views.blog_view += 1
         views.save()
+
         return views
+
+    def get_object_like(self,*args, **kwargs):
+        # likes = super().get_object()
+        stuff = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes() 
+
+        return total_likes

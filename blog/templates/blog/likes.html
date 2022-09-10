@@ -1,0 +1,28 @@
+<div class="blog__info">
+  <div class="counters">
+    <span><i class="fas fa-eye"></i>{{post.blog_view}}</span>
+    <span><i class="fas fa-comment-alt"></i>12</span>
+    <span><i class="fa-solid fa-heart"></i>{{post.total_likes}}</span>
+  </div>
+  {% if request.user.is_authenticated %}
+  <div class="buttons">
+    <form action="{% url 'like_post' post.pk %}" method="POST">
+      {% csrf_token %}
+      <button
+        type="submit"
+        ,
+        name="post_id"
+        ,
+        value="{{post.id}}"
+        ,
+        class="btn btn-danger"
+      >
+        <i class="fa-solid fa-heart text-center"></i>
+      </button>
+    </form>
+    <button class="btn btn-danger">
+      <i class="fas fa-comment-alt"></i>
+    </button>
+  </div>
+  {% endif %}
+</div>

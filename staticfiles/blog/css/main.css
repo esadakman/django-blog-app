@@ -39,32 +39,32 @@ ul {
       padding: .2rem .4rem;
       border-radius: .3rem; }
   .cardContainer .blog__info {
-    background-color: #444444;
+    background-color: #00000068;
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 20%;
+    bottom: 17%;
     display: flex;
     align-items: flex-end;
-    padding: 15px 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7rem;
     color: #fff; }
     .cardContainer .blog__info * {
       transition: all 0.4s linear; }
-    .cardContainer .blog__info span {
-      margin-right: 20px; }
-      .cardContainer .blog__info span .fa-comment-alt:hover,
-      .cardContainer .blog__info span .fa-heart:hover {
-        color: crimson;
-        transform: scale(1);
-        cursor: pointer; }
-    .cardContainer .blog__info i {
-      margin-right: 10px;
-      transform: scale(0.9); }
+    .cardContainer .blog__info .buttons {
+      display: flex;
+      gap: 1rem; }
+    .cardContainer .blog__info .counters {
+      display: flex;
+      gap: .7rem; }
+      .cardContainer .blog__info .counters i {
+        margin-right: 5px; }
   .cardContainer .blog__profile {
     background-color: #e4f2fd;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     position: absolute;
     right: 0;
     left: 0;
