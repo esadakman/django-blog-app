@@ -85,8 +85,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 
         return views
 
-    def get_object_like(self,*args, **kwargs):
-        # likes = super().get_object()
+    def get_object_like(self,*args, **kwargs): 
         stuff = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = stuff.total_likes() 
 
@@ -95,8 +94,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 class AddCommentView(CreateView):
     model = Comment
     form_class = CommentForm
-    template_name = 'blog/add_comment.html'
-    # fields = '__all__'
+    template_name = 'blog/add_comment.html' 
     def form_valid(self,form):
         form.instance.post_id = self.kwargs['pk']
         form.instance.name = self.request.user

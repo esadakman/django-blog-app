@@ -3,8 +3,14 @@ body {
   padding: 0;
   box-sizing: border-box; }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #444444;
+  margin: 0; }
 
 ul {
   margin: 0; }
@@ -32,12 +38,12 @@ ul {
   position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.315); }
   .cardContainer .blog__date {
-    margin: .5rem; }
+    margin: 0.5rem; }
     .cardContainer .blog__date small {
       background-color: #00000068;
       color: white;
-      padding: .2rem .4rem;
-      border-radius: .3rem; }
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.3rem; }
   .cardContainer .blog__info {
     background-color: #00000068;
     position: absolute;
@@ -48,7 +54,7 @@ ul {
     align-items: flex-end;
     align-items: center;
     justify-content: space-between;
-    padding: .7rem;
+    padding: 0.7rem;
     color: #fff; }
     .cardContainer .blog__info * {
       transition: all 0.4s linear; }
@@ -56,12 +62,12 @@ ul {
       display: flex;
       gap: 1rem; }
       .cardContainer .blog__info .buttons button {
-        padding: .3rem .4rem; }
+        padding: 0.3rem 0.4rem; }
       .cardContainer .blog__info .buttons i {
         font-size: 15px; }
     .cardContainer .blog__info .counters {
       display: flex;
-      gap: .7rem; }
+      gap: 0.7rem; }
       .cardContainer .blog__info .counters i {
         font-size: 1rem;
         margin-right: 5px; }
@@ -94,25 +100,108 @@ ul {
   display: flex;
   flex-wrap: wrap; }
   .detail__counter .blog__info {
+    padding: .5rem 1rem !important;
     width: 100%;
     background-color: #291f1f68;
     display: flex !important;
-    align-items: flex-end;
     align-items: center;
     justify-content: space-between;
-    padding: .7rem;
+    padding: 0.7rem;
     color: #fff; }
     .detail__counter .blog__info .counters {
-      display: flex;
-      gap: 1rem; }
+      display: flex; }
       .detail__counter .blog__info .counters i {
         margin-right: 5px; }
     .detail__counter .blog__info .buttons {
       display: flex;
       gap: 1rem; }
       .detail__counter .blog__info .buttons button {
-        padding: .3rem .4rem; }
+        padding: 0.3rem 0.4rem; }
       .detail__counter .blog__info .buttons i {
         font-size: 15px; }
+
+.containerDetails {
+  min-height: 91vh;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .containerDetails .cardContainer {
+    border-radius: 1rem;
+    box-shadow: rgba(108, 107, 107, 0.3) 0px 19px 38px, rgba(118, 115, 115, 0.22) 0px 15px 12px;
+    background-color: white;
+    width: 80%;
+    min-width: 300px;
+    max-width: 500px;
+    height: fit-content; }
+    .containerDetails .cardContainer .title > h2 {
+      text-align: center;
+      margin: 0.5rem; }
+    .containerDetails .cardContainer .title > img {
+      width: 100%;
+      max-height: 20rem;
+      object-fit: cover; }
+    .containerDetails .cardContainer .blog__info {
+      width: 100%;
+      background-color: #291f1f68;
+      display: flex !important;
+      position: relative;
+      color: #fff; }
+      .containerDetails .cardContainer .blog__info .counters {
+        display: flex;
+        gap: 1rem; }
+        .containerDetails .cardContainer .blog__info .counters i {
+          margin-right: 5px; }
+      .containerDetails .cardContainer .blog__info .buttons {
+        display: flex;
+        gap: 1rem; }
+        .containerDetails .cardContainer .blog__info .buttons button {
+          padding: 0.3rem 0.4rem; }
+        .containerDetails .cardContainer .blog__info .buttons i {
+          font-size: 15px; }
+  .containerDetails .description {
+    background: #efeefe;
+    text-align: center; }
+    .containerDetails .description > h3 {
+      padding: 0.4rem; }
+    .containerDetails .description > h6 {
+      font-size: 0.8rem;
+      font-weight: normal; }
+    .containerDetails .description > p {
+      font-size: 1rem;
+      text-align: justify;
+      padding: 1rem 1rem 0 1rem;
+      max-height: 230px;
+      overflow: auto; }
+  .containerDetails .cardFooter {
+    background: #efeefe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: -1rem; }
+    .containerDetails .cardFooter > p {
+      font-weight: 500; }
+    .containerDetails .cardFooter .btnContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0.1rem; }
+      .containerDetails .cardFooter .btnContainer a {
+        margin-left: .5rem; }
+  .containerDetails .commentSection {
+    margin: .5rem 1rem; }
+    .containerDetails .commentSection .commentContainer {
+      background-color: #44444457;
+      border-radius: .5rem;
+      padding: .5rem;
+      margin-top: .5rem; }
+      .containerDetails .commentSection .commentContainer p {
+        margin: 0; }
+  .containerDetails .row {
+    margin: 1rem; }
+    .containerDetails .row text-area {
+      height: 4rem; }
 
 /*# sourceMappingURL=main.css.map */
