@@ -4,13 +4,13 @@
 {% block content %} 
     <div class="newBlog">
         <div class="contactForm">
-          <h2 class="text-light"> Add New Blog Post</h2>
+          <h2 class="text-light"> Create a Post</h2>
           <div>
             <form method="POST" enctype="multipart/form-data" class="blogForm">
                 {% csrf_token %}
                 <div class="w-100"> 
-                  <label  >User</label>
-                  {% render_field form.title placeholder="User Name"  %} 
+                  <label  >Title</label>
+                  {% render_field form.title placeholder="Title "  %} 
                 </div>
                 <div class="w-100"> 
                   <label  >Content</label>
