@@ -293,7 +293,7 @@ $san-juan: #2d4e68;
         flex-direction: column;
         width: 100%;
         font-size: 1rem;
-        gap: .5rem; 
+        gap: .5rem;  
         label{
           color: white; 
           margin: 0 0 5px 5px;
@@ -359,5 +359,11 @@ $san-juan: #2d4e68;
         }
       }
     }
+  }
+}
+
+.register{ 
+  label{
+    margin-bottom: .5rem  ;
   }
 }

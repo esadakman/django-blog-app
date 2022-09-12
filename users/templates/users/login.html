@@ -3,42 +3,34 @@
 {% load crispy_forms_tags %} 
 {% block content %} 
 <div class="d-flex justify-content-center mt-4 ">
-    <div style="width: fit-content; min-width: 400px">
+    <div class="content-section col-lg-6">
       {% if request.user.is_authenticated %}
       <h3>You are already logged in</h3>
       {% else %}  
-      <h3 style="text-align: center">Please Login</h3>
+      <h3 style="text-align: center">Log In </h3>
       <hr />
-      <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %} {{ login_form | crispy }}
-        <div class="detailbuttons d-flex justify-content-center my-3">
-          <button class="btn btn-secondary btn-md btn-block mx-5" style="width: 100px" type="submit" aria-pressed="true">Login</button>
+      <form action="" method="POST" >
+        {% csrf_token %} 
+
+        <fieldset class="form-group register"> 
+            {{login_form | crispy}}  
+        </fieldset> 
+        
+        <div class="d-grid my-2">
+          <input class="btn  btn-primary btn-login text-light  " type="submit"  style="border-radius:5px;" value='LOGIN'>
         </div>
       </form>
       <hr/>
       <div class="d-flex justify-content-between" style="font-size: small">
         <p style="margin-right: 10px">Need an account?</p>
-        <a href="#register">Sign Up Now</a>
+        <a class="text-decoration-none fw-bold" href="{% url 'user_register' %}">Sign Up Now</a>
       </div>
     </div>
+    {% endif %} 
   </div>
-  {% endif %}  
-   {% comment %} <div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Log In</legend>
-            {{ login_form | crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Login</button>
-        </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{% url 'user_register' %}">Sign Up Now</a>
-        </small>
-    </div>
-</div>   {% endcomment %}
+
+   
+
+    
 {% endblock %}
  

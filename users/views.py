@@ -18,7 +18,7 @@ def user_register(request):
     return render(request, 'users/register.html', {'form': form})   
 
 def user_login(request):
-    form = AuthenticationForm(request, data=request.POST)
+    form = AuthenticationForm(request, data=request.POST or None)
     if form.is_valid():
         user = form.get_user()
         if user:
@@ -27,7 +27,7 @@ def user_login(request):
             return redirect('blog-home')
     context = {
         'login_form' : form
-    }
+    }  
     return render(request, 'users/login.html', context)
 
 def user_logout(request):

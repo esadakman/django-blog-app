@@ -1,26 +1,42 @@
-{% extends 'templates/base.html' %}
-{% load crispy_forms_tags %}
+{% extends 'templates/base.html' %} 
 {% block content %}
-<div class="content-section">
-  <div class="media d-flex">
-    <img class="rounded-circle account-img" src="{{ user.userprofile.image.url }}">
+{%load widget_tweaks %} 
+<div class="d-flex justify-content-center ">
+  <div class="content-section col-lg-6">
+    <div class="media d-flex">
+      <img
+        class="rounded-circle account-img"
+        src="{{ user.userprofile.image.url }}"
+      /> 
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+    <!-- FORM HERE -->
+    <div>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <div class="mb-3">
+          <label for="id_username" class="form-label requiredField">Username</label>
+          {% render_field u_form.username class='textinput textInput form-control' placeholder="Username" id="id_username" type="text" name="username" required=True %}
+        </div>
+        
+        <div class="mb-3">
+          <label for="id_username" class="form-label requiredField">E-mail</label>
+          {% render_field u_form.email class='textinput textInput form-control' placeholder="Email" id="id_username" type="email" name="email" required=True%}
+        </div>
+        
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Profile Picture</label>
+          {% render_field p_form.image class='form-control' id="formFile" type="file" %}
+        </div>
 
-    <div class="media-body">
-      <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">{{ user.email }}</p>
+        <div class="d-grid mb-2">
+          <input class="btn  btn-info btn-login text-light  " type="submit"  style="border-radius:5px;" value='UPDATE'>
+        </div> 
+      </form>
     </div>
   </div>
-  <!-- FORM HERE -->
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">Profile Info</legend>
-      {{ u_form|crispy }}
-      {{ p_form|crispy }}
-    </fieldset>
-    <div class="form-group">
-      <button class="btn btn-outline-info" type="submit">Update</button>
-    </div>
-  </form>
 </div>
 {% endblock content %}

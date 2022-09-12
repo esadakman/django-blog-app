@@ -38,8 +38,8 @@ body {
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
 }
 
 .article-title {
@@ -98,3 +98,5 @@ a.article-title,
     font-size: 2.5rem;
 }
  
+
+
