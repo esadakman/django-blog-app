@@ -10,8 +10,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(null=True, blank=True, default='blog_default.png',upload_to='user_directory_path')  
-    blog_view = models.IntegerField(default=0, blank=True)
-    # likes = models.ManyToManyField(User, related_name='blog_posts')
+    blog_view = models.IntegerField(default=0, blank=True) 
     likes = models.ManyToManyField(User, blank=True, related_name="collected_votes") 
     blog_comment = models.PositiveIntegerField(default=0)
     
@@ -34,8 +33,7 @@ class Post(models.Model):
 
 class Comment(models.Model): 
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments") 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments_user", null=True) 
-    # name = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments_user", null=True)  
     content = models.TextField()
     date_added = models.DateTimeField(default=timezone.now)
 
