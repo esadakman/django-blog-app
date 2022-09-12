@@ -11,9 +11,9 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True, default='blog_default.png',upload_to='user_directory_path')  
     blog_view = models.IntegerField(default=0, blank=True)
     likes = models.ManyToManyField(User, related_name='blog_posts')
-
-    def total_likes(self):
-        return self.likes.count()
+    likes = models.ManyToManyField(User, blank=True, related_name="collected_votes")
+    # def total_likes(self):
+    #     return self.likes.count()
 
     def __str__(self):
         return self.title

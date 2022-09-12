@@ -23,12 +23,12 @@ def home(request):
 def about(request):
     return render(request, 'blog/about.html') 
 
-def LikeView(request, pk):
-    post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.likes.add(request.user)
-    return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
+def like_post(request, id):
+    # post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    # post.likes.add(request.user)
+    # return HttpResponseRedirect(reverse('post-detail', args=[str(pk)]))
     # return render( request, 'blog/likes.html', args=[str(pk)])
-    instance = Post.objects.get(id=id)
+    # instance = Post.objects.get(id=id)
     # if request.method == "POST":
     #     instance = get_object_or_404(Post, id=request.POST.get('post_id')) 
     #     if not instance.likes.filter(id=request.user.id).exists():
@@ -39,7 +39,16 @@ def LikeView(request, pk):
     #         instance.likes.remove(request.user)
     #         instance.save()  
     #         return render( request, 'blog/likes.html', context={'post':instance})
-
+    if request.method == "POST":
+        instance = Post.objects.get(id=id)
+        if not instance.likes.filter(id=request.user.id).exists():
+            instance.likes.add(request.user)
+            instance.save() 
+            return render( request, 'blog/likes_area.html', context={'post':instance})
+        else:
+            instance.likes.remove(request.user)
+            instance.save() 
+            return render( request, 'blog/likes_area.html', context={'post':instance})
 
 class PostListView(ListView):
     model = Post
