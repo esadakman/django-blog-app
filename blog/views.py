@@ -116,16 +116,4 @@ def blog_detail(request, pk):
             comment.save()
             return redirect("post-detail", pk)
     return render(request, 'blog/post_detail.html', {'post': post, 'form': form, 'comments': comments})
-
-# class AddCommentView(CreateView):
-#     model = Comment
-#     form_class = CommentForm
-#     template_name = 'blog/add_comment.html'
-
-#     def form_valid(self, form):
-#         form.instance.post_id = self.kwargs['pk']
-#         form.instance.name = self.request.user
-#         return super().form_valid(form)
-
-#     # success_url: reverse_lazy('post-detail')
-#     success_url = '/'
+ 

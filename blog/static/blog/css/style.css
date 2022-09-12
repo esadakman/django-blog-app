@@ -1,4 +1,26 @@
-/* .site-header .navbar-nav .nav-link {
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, #0098f795, #dc29269e);
+    background-size: cover;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #444444;
+    margin: 0;
+  }
+  
+  ul {
+    margin: 0;
+  }
+
+.site-header .navbar-nav .nav-link {
     color: #cbd5db;
 }
 
@@ -75,4 +97,4 @@ a.article-title,
 .account-heading {
     font-size: 2.5rem;
 }
-  */
+ 

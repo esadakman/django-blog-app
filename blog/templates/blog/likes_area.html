@@ -11,8 +11,9 @@
     hx-target="#likesarea"
     hx-swap="outerHTML"
     style="background-color: transparent; border: none"
-    class="text-light"
-  >
+    class="text-light p-0"
+  > 
+  
     {% if request.user in post.likes.all %}
     <i class="fa-solid fa-heart" style="color: crimson"></i>
     {% else %}

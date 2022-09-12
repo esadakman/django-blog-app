@@ -16,7 +16,7 @@
         <span>
           <a class="text-light bg-transparent border-0 mt-1" href="#">
             <i class="fas fa-comment-alt  me-1"></i></a> 
-          </i>12</span>
+          </i>{{post.blog_comment}}</span>
         <span> 
           {% include "blog/likes_area.html" %} 
         </span>
@@ -31,6 +31,7 @@
           <a class="article-title" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
         </h2>
         <p>@<b>{{ post.author }}</b></p>
+        <p class="cont">{{ post.content | truncatechars:30 }}</p>
       </div>
     </div>
   </div>
