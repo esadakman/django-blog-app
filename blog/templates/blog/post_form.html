@@ -1,18 +1,43 @@
 {% extends "templates/base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
-    <div class="d-flex justify-content-center mt-4">
-        <div class="content-section col-md-6">
-            <form method="POST" enctype="multipart/form-data">
+{% load widget_tweaks %} 
+{% block content %} 
+    <div class="newBlog">
+        <div class="contactForm">
+          <h2 class="text-light"> Add New Blog Post</h2>
+          <div>
+            <form method="POST" enctype="multipart/form-data" class="blogForm">
                 {% csrf_token %}
-                <fieldset class="form-group d-flex flex-column gap-1">
-                    <legend class="border-bottom mb-1 ">Blog Post</legend>
-                    {{ form|crispy }}
-                </fieldset>
-                <div class="form-group mt-2 text-center">
-                    <button class="btn btn-outline-info" type="submit">Post</button>
+                <div class="w-100"> 
+                  <label  >User</label>
+                  {% render_field form.title placeholder="User Name"  %} 
                 </div>
+                <div class="w-100"> 
+                  <label  >Content</label>
+                  {% render_field form.content placeholder="Content here"  %} 
+                </div> 
+              <div  class="w-100">
+                {{ form.image.label_tag }} 
+                <input type="file" name="image" accept="image/*" class="clearablefileinput form-control-file" id="id_image"> 
+              </div>
+              <button  value="submit"  >  
+                Send
+              </button>
             </form>
+          </div>
         </div>
-    </div>
+      </div>
 {% endblock content %}
+
+
+  
+{% comment %} {{form.title|as_crispy_field}} 
+{{form.content|as_crispy_field}}  {% endcomment %}
+{% comment %} {{ form.title.label_tag }} 
+<input type="text" name="title" maxlength="100" class="textinput  " required  id="id_title">
+{{ form.content.label_tag }} 
+<textarea name="content" cols="40" rows="10" class="textarea form-control" required="" id="id_content"></textarea>{% endcomment %}
+{% comment %} <fieldset class="form-groups ">  {% endcomment %}
+    {% comment %} {{ form|crispy }} {% endcomment %}
+    {% comment %} {{form.title|as_crispy_field}} {% endcomment %}
+{% comment %} </fieldset> {% endcomment %}

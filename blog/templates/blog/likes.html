@@ -1,12 +1,5 @@
-<div class="blog__info">
-  <div class="counters">
-    <span><i class="fas fa-eye"></i>{{post.blog_view}}</span>
-    <span><i class="fas fa-comment-alt"></i>12</span>
-    <span><i class="fa-solid fa-heart"></i>{{post.total_likes}}</span>
-  </div>
-  {% if request.user.is_authenticated %}
-  <div class="buttons">
-    <form action="{% url 'like_post' post.pk %}" method="POST">
+   {% if request.user.is_authenticated %}
+  <form action="{% url 'like_post' post.pk %}" method="POST">
       {% csrf_token %}
       <button
         type="submit"
@@ -15,14 +8,33 @@
         ,
         value="{{post.id}}"
         ,
-        class="btn btn-danger "
+        class="bg-transparent border-0 text-light",
+        
       >
-        <i class="fa-solid fa-heart text-center"></i>
+      {% if request.user in post.likes.all %}
+          <i class="fa-solid fa-heart" style="color: crimson;"></i> 
+      {% else %}
+          <i class="fa-solid fa-heart" style="color: white;"></i> 
+      {% endif %} 
+      {{post.total_likes}}
       </button>
-    </form> 
-    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-comment' post.pk %}"><i class="fas fa-comment-alt"></i></a>
-  </div>
+  </form>  
   {% endif %}
-</div>
+{% comment %} </div> {% endcomment %}
 
  
+
+{% comment %} {% if request.user.is_authenticated %} 
+<div id="{{post.id}}" role="group">
+  {% csrf_token %}
+  <button hx-post="{% url 'like_post' post.id %}" id="like-button" 
+        hx-target="#hey{{post.id}}" hx-swap="outerHTML" style="background-color: transparent; border: none;">
+    {% if request.user in post.likes.all %}
+    <i class="fa-solid fa-heart" style="color: crimson;"></i>
+    {% else %}
+    <i class="fa-solid fa-heart" style="color: white;"></i>
+    {% endif %}
+    {{post.total_likes}}
+  </button>
+</div>
+{% endif %}  {% endcomment %}

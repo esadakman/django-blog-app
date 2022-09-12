@@ -47,27 +47,7 @@
       {% endfor %}
     </div>
 
-    {% comment %} ! {% endcomment %}
-    <div class="row "> 
-        <h4 class="mb-3">Leave a comment</h4>
-        <form method='POST'>
-          {% csrf_token %}
-          <div class="form-group"> 
-            {{ form.content.label_tag }}
-            <textarea 
-            required 
-            class="form-control {% if form.content.errors %}is-invalid{% endif %}" 
-            id="id_content" 
-            name="content"
-            placeholder="asd"
-            rows="23">
-            {% comment %} {{ form.content.value|default:'' }} {% endcomment %}
-          </textarea>
-          </div>
-          <button class="btn btn-primary mt-2" type="submit">Reply</button>
-        </form> 
-    </div>
-    {% comment %} ! {% endcomment %}
+    
   </div> 
 </div>
    
@@ -75,3 +55,38 @@
     </div>
 {% endblock content %}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} ! {% endcomment %}
+{% comment %} <div class="row "> 
+  <h4 class="mb-3">Leave a comment</h4>
+  <form method='POST'>
+    {% csrf_token %}
+    <div class="form-group"> 
+      {{ form.content.label_tag }}
+      <textarea 
+      required 
+      class="form-control {% if form.content.errors %}is-invalid{% endif %}" 
+      id="id_content" 
+      name="content"
+      placeholder="asd"
+      rows="23">
+      {{ form.content.value|default:'' }}
+    </textarea>
+    </div>
+    <button class="btn btn-primary mt-2" type="submit">Reply</button>
+  </form> 
+</div> {% endcomment %}
+{% comment %} ! {% endcomment %}

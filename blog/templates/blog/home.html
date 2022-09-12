@@ -1,33 +1,44 @@
 {% extends "templates/base.html" %}
 {% load static %}
 {% block content %}
-    <div class="contain">
-    {% for post in posts %}  
+<div class="contain">
+  {% for post in posts %}
 
-      <div class="cardContainer" style="background-image: url( {{post.image.url}}  ); ">
-        <div class="blog__date" > 
-          <small class="">{{ post.date_posted|date:"F d, Y" }}</small>
-        </div>
-        {% include "blog/likes.html" %}
-        
-        <div class="blog__profile">
-         <img
-          src="{{ post.author.userprofile.image.url }}"
-          alt="author"
-         />
-         <div class="blog__profile__text">
-          <h2>
-            <a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
-          </h2>
-          <p>by <b>{{ post.author }}</b></p> 
-         </div> 
-        </div>  
-       </div> 
-       {% endfor %}
+  <div class="cardContainer" style="background-image: url( {{post.image.url}}  ); ">
+    <div class="blog__date">
+      <small class="">{{ post.date_posted|date:"F d, Y" }}</small>
     </div>
-    
- 
+    {% comment %} !!!! {% endcomment %}
 
- 
-  
+    <div class="blog__info">
+      <div class="counters">
+        <span><i class="fas fa-eye me-1"></i>{{post.blog_view}}</span>
+        <span>
+          <a class="text-light bg-transparent border-0 mt-1" href="{% url 'post-comment' post.pk %}">
+            <i class="fas fa-comment-alt  me-1"></i></a> 
+          </i>12</span>
+        <span> 
+          {% include "blog/likes.html" %} 
+        </span>
+      </div>
+      
+    </div>
+    {% comment %} !!!! {% endcomment %}
+    <div class="blog__profile">
+      <img src="{{ post.author.userprofile.image.url }}" alt="author" />
+      <div class="blog__profile__text">
+        <h2>
+          <a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+        </h2>
+        <p>by <b>{{ post.author }}</b></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+
 {% endblock content %}

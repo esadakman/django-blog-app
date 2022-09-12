@@ -49,7 +49,7 @@ ul {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 21%;
+    bottom: 20%;
     display: flex !important;
     align-items: flex-end;
     align-items: center;
@@ -64,13 +64,15 @@ ul {
       .cardContainer .blog__info .buttons button {
         padding: 0.3rem 0.4rem; }
       .cardContainer .blog__info .buttons i {
-        font-size: 15px; }
+        font-size: 15px;
+        border: none; }
     .cardContainer .blog__info .counters {
       display: flex;
-      gap: 0.7rem; }
-      .cardContainer .blog__info .counters i {
-        font-size: 1rem;
-        margin-right: 5px; }
+      align-items: center;
+      gap: 0.6rem; }
+      .cardContainer .blog__info .counters span {
+        display: flex;
+        align-items: center; }
   .cardContainer .blog__profile {
     background-color: #e4f2fd;
     display: flex;
@@ -156,8 +158,6 @@ ul {
       .containerDetails .cardContainer .blog__info .buttons {
         display: flex;
         gap: 1rem; }
-        .containerDetails .cardContainer .blog__info .buttons button {
-          padding: 0.3rem 0.4rem; }
         .containerDetails .cardContainer .blog__info .buttons i {
           font-size: 15px; }
   .containerDetails .description {
@@ -203,5 +203,96 @@ ul {
     margin: 1rem; }
     .containerDetails .row text-area {
       height: 4rem; }
+
+.newBlog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 83vh; }
+  .newBlog .contactForm {
+    background-color: #050f2495;
+    width: 90%;
+    min-width: 20rem;
+    max-width: 40rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1.5rem;
+    color: white;
+    border-radius: 1rem;
+    transition: 0.5s all linear; }
+    .newBlog .contactForm > h2 {
+      margin: 1.5rem;
+      width: 22rem;
+      text-align: center; }
+    .newBlog .contactForm > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      max-width: 35rem;
+      color: black; }
+      .newBlog .contactForm > div form {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        font-size: 1rem;
+        gap: .5rem; }
+        .newBlog .contactForm > div form label {
+          color: white;
+          margin: 0 0 5px 5px; }
+        .newBlog .contactForm > div form input {
+          color: black;
+          transition: 0.3s all linear;
+          width: 100%;
+          height: 3rem;
+          padding: 0.5rem 0;
+          font-size: 1rem;
+          text-indent: 0.5rem;
+          outline: none;
+          border-radius: 5px;
+          border: 2px solid #050f24;
+          background-color: white; }
+          .newBlog .contactForm > div form input::placeholder {
+            color: #050f24; }
+          .newBlog .contactForm > div form input:focus {
+            border: 2px solid #2d4e68; }
+        .newBlog .contactForm > div form textarea {
+          color: black;
+          font-size: 1rem;
+          transition: 0.3s all linear;
+          padding: 0.5rem;
+          width: 100% !important;
+          border: none;
+          outline: none;
+          resize: none;
+          height: 11rem !important;
+          border-radius: 5px;
+          border: 2px solid #050f24;
+          background-color: white;
+          margin-bottom: 0 !important; }
+          .newBlog .contactForm > div form textarea::placeholder {
+            color: #050f24; }
+          .newBlog .contactForm > div form textarea:focus {
+            border: 2px solid #2d4e68; }
+        .newBlog .contactForm > div form > button {
+          cursor: pointer;
+          transition: 0.3s all linear;
+          background-color: #050f24;
+          font-size: 1rem;
+          letter-spacing: 0.2rem;
+          color: white;
+          border: 1px solid #2d4e68;
+          border-radius: 0.3rem;
+          /* margin-top: 1rem; */
+          padding: 0.8rem;
+          width: 100%;
+          opacity: 0.8; }
+          .newBlog .contactForm > div form > button:hover {
+            opacity: 1;
+            border: 1px solid #2d4e68; }
 
 /*# sourceMappingURL=main.css.map */

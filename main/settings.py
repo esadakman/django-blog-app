@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party
     'crispy_forms',
-    'sass_processor',
+    'sass_processor', 
+    'widget_tweaks', 
     # my Apps
     'users',
     'blog',
