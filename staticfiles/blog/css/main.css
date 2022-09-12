@@ -1,3 +1,6 @@
+nav {
+  background-color: #050f24; }
+
 .contain {
   display: flex;
   flex-wrap: wrap;
@@ -279,5 +282,35 @@
 
 .register label {
   margin-bottom: .5rem; }
+
+.FooterStyle {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.13);
+  color: black;
+  font-family: "Roboto", sans-serif;
+  background-color: #050f24;
+  align-items: center;
+  height: 8vh;
+  padding: 0 1.5rem;
+  max-width: 100vw;
+  bottom: 0; }
+  .FooterStyle .TextStyle {
+    font-size: 0.7rem;
+    color: white; }
+    .FooterStyle .TextStyle > p {
+      color: white; }
+  .FooterStyle .Logos {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; }
+    .FooterStyle .Logos > a {
+      transition: all 0.3s linear;
+      color: white; }
+      .FooterStyle .Logos > a:hover {
+        color: aqua;
+        transform: scale(1.1); }
 
 /*# sourceMappingURL=main.css.map */
