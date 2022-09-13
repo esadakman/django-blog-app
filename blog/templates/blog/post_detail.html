@@ -46,9 +46,8 @@
       <hr>
       <form action="" method="POST">
         {% csrf_token %}
-        <textarea required name="content" class="form-control" id="{{post.user.id}}" 
-          placeholder="Leave a comment here" >
-        </textarea>
+        <textarea required name="content" class="form-control" id="{{post.user.id}}" value=""
+          placeholder="Leave a comment here" ></textarea>
         <div class=" w-100 d-flex flex-row-reverse"> 
           <button type="submit" class="btn btn-success mt-2 ">Comment</button>
         </div>

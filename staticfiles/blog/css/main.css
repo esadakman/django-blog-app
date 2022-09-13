@@ -31,7 +31,7 @@ nav {
   background-position: center;
   background-color: salmon;
   background-size: cover;
-  width: 300px;
+  width: 350px;
   height: 400px;
   position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.315); }
@@ -169,10 +169,10 @@ nav {
     .containerDetails .description > p {
       font-size: 1rem;
       text-align: justify;
-      padding: 1rem 1rem 0 1rem;
+      padding: 1rem;
       margin-bottom: 1rem;
       max-height: 230px;
-      min-height: 200px;
+      min-height: 100px;
       overflow: auto; }
   .containerDetails .cardFooter {
     background: #efeefe;
@@ -326,6 +326,8 @@ nav {
     .FooterStyle .Logos > a {
       transition: all 0.3s linear;
       color: white; }
+      .FooterStyle .Logos > a > i {
+        font-size: 1.4rem; }
       .FooterStyle .Logos > a:hover {
         color: aqua;
         transform: scale(1.1); }
