@@ -1,14 +1,14 @@
 {% if request.user.is_authenticated %}
 <div
   class="list-group list-group-horizontal btn-group"
-  id="likesarea"
+  id="likesarea{{post.id}}"
   role="group"
 >
   {% csrf_token %}
   <button
     hx-post="{% url 'like_post' post.id %}"
     id="like-button"
-    hx-target="#likesarea"
+    hx-target="#likesarea{{post.id}}"
     hx-swap="outerHTML"
     style="background-color: transparent; border: none"
     class="text-light p-0"

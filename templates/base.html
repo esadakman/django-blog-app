@@ -16,8 +16,8 @@
         <title>Django Blog - {{ title }}</title>
     {% else %}
         <title>Django Blog</title>
-    {% endif %}  {% endcomment %}
-
+    {% endif %}  {% endcomment %} 
+    <title>Django Blog</title>
 </head>
 <body >
     {% include 'navbar.html' %} 
@@ -25,24 +25,18 @@
     {% if messages %}
     {% for message in messages %} 
     {% if message.tags == 'success' %}
-    <div class="alert alert-primary container mt-2 alrtmsg" style="width: 50%;">{{ message }}</div>
-    <div class="position-fixed top-0 end-0 p-3">
-      <div id="toast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div id="toast-body" class="toast-body">{{ message }}</div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-      </div>
-    </div> 
+    <div class="toast-body bg-success text-light position-fixed top-3 end-0  alrtmsg" id="toast" >
+      {{ message }}
+    </div>
     
-    {% elif message.tags == 'error' %}
-    <div class="alert alert-danger container mt-2  alrtmsg" style="width: 50%;">
+    
+    {% elif message.tags == 'error' %} 
+    <div class="toast-body bg-danger text-light position-fixed top-3 end-0  alrtmsg" id="toast" >
       {{ message }}
     </div>
     {% endif %} 
     {% endfor %} 
-    {% endif %}  
-    
+    {% endif %}    
     <main role="main" class="container mt-2" >
         <div class="row">
           <div class="col-md-12">

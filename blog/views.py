@@ -11,6 +11,7 @@ from django.views.generic import (
 from .forms import CommentForm, PostUpdateForm
 from django.contrib.auth.decorators import login_required
 
+
 def home(request):
     context = {
         'posts': Post.objects.all()
@@ -19,10 +20,12 @@ def home(request):
 
 
 def like_post(request, id):
+    print(id)
     if request.method == "POST":
         instance = Post.objects.get(id=id)
+        print(instance)
         if not instance.likes.filter(id=request.user.id).exists():
-            instance.likes.add(request.user)
+            instance.likes.add(request.user) 
             instance.save()
             return render(request, 'blog/likes_area.html', context={'post': instance})
         else:

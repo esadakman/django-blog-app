@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404 
+from django.shortcuts import render, redirect  
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login ,logout
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-# , UserProfileForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm 
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
 def user_register(request):
@@ -12,7 +11,7 @@ def user_register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('blog-home')
+            return redirect('user_login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})   
@@ -22,7 +21,7 @@ def user_login(request):
     if form.is_valid():
         user = form.get_user()
         if user:
-            messages.success(request, 'Login successfully')
+            messages.success(request, 'Login Successfully')
             login(request, user)
             return redirect('blog-home')
     context = {
