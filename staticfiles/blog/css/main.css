@@ -211,7 +211,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 83vh; }
+  min-height: 83vh;
+  margin-bottom: 1rem; }
   .newBlog .contactForm {
     background-color: #050f2495;
     width: 90%;

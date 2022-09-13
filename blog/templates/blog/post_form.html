@@ -13,13 +13,13 @@
                   {% render_field form.title placeholder="Title "  %} 
                 </div>
                 <div class="w-100"> 
-                  <label  >Content</label>
+                  <label >Content</label>
                   {% render_field form.content placeholder="Content here"  %} 
                 </div> 
-              <div  class="w-100">
-                {{ form.image.label_tag }} 
-                <input type="file" name="image" accept="image/*" class=" form-control-file" id="id_image" required> 
-              </div>
+                <div  class="w-100 text-light "> 
+                <label for="formFile" class="form-label me-2">Image</label>
+                {% render_field form.image class='form-control' id="formFile" name="image"%}
+               </div>
               <button  value="submit"  >  
                 Send
               </button>
