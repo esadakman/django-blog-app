@@ -20,10 +20,10 @@ def home(request):
 
 
 def like_post(request, id):
-    print(id)
+    # print(id)
     if request.method == "POST":
         instance = Post.objects.get(id=id)
-        print(instance)
+        # print(instance)
         if not instance.likes.filter(id=request.user.id).exists():
             instance.likes.add(request.user) 
             instance.save()

@@ -40,6 +40,8 @@ nav {
   padding: 2rem 0;
   gap: 2rem;
 }
+
+ 
 .cardContainer {
   background-repeat: no-repeat;
   background-position: center;
@@ -163,12 +165,12 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   .cardContainer {
     border-radius: 1rem;
     box-shadow: rgba(108, 107, 107, 0.3) 0px 19px 38px,
       rgba(118, 115, 115, 0.22) 0px 15px 12px;
-    background-color: white;
+    background: #171b204a;;
+    
     width: 80%;
     min-width: 300px;
     max-width: 500px;
@@ -177,6 +179,7 @@ nav {
       & > h2 {
         text-align: center;
         margin: 0.5rem;
+        color: white;
       }
       & > img {
         width: 100%;
@@ -197,6 +200,7 @@ nav {
       display: flex !important;
       position: relative;
       color: $bright-color;
+
       .buttons {
         display: flex;
         gap: 1rem;

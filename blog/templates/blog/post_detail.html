@@ -34,16 +34,18 @@
     <div class="commentSection">
       
       {% if post.author == user %}
-      <div class="  d-flex  flex-row-reverse py-1">
+      <div class="  d-flex  flex-row-reverse ">
         <a class="btn btn-danger btn-sm  ms-2" href="{% url 'post-delete' post.id %}">
           DELETE
+          {% comment %} <i class="fa-solid fa-trash"></i> {% endcomment %}
         </a>
         <a class="btn btn-secondary btn-sm  " href="{% url 'post-update' post.id %}">
-          UPDATE
+          {% comment %} <i class="fa-solid fa-pen"></i>  {% endcomment %}
+           UPDATE
         </a>
       </div>
-      {% endif %}
       <hr>
+      {% endif %}
       <form action="" method="POST">
         {% csrf_token %}
         <textarea required name="content" class="form-control" id="{{post.user.id}}" value=""
@@ -62,7 +64,7 @@
       
       {% else %}
       <div class="">
-        <h3>Comments...</h3>
+        <h3 class="text-light">Comments...</h3>
         <hr>
         {% for comment in post.comments.all %}
         <div class='border rounded p-2 pb-0 mb-2 mt-2 commentsFor'>

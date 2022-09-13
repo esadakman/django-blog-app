@@ -130,14 +130,15 @@ nav {
   .containerDetails .cardContainer {
     border-radius: 1rem;
     box-shadow: rgba(108, 107, 107, 0.3) 0px 19px 38px, rgba(118, 115, 115, 0.22) 0px 15px 12px;
-    background-color: white;
+    background: #171b204a;
     width: 80%;
     min-width: 300px;
     max-width: 500px;
     height: fit-content; }
     .containerDetails .cardContainer .title > h2 {
       text-align: center;
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      color: white; }
     .containerDetails .cardContainer .title > img {
       width: 100%;
       max-height: 20rem;
