@@ -64,8 +64,8 @@ $ git clone https://github.com/esadakman/django-blog-app
 
 ## Acknowledgements
 
-- I build a Blog application with Django that allows users to create, edit and delete posts,
-- The home page lists all blog posts, and there is a dedicated detail page for each individual post, comment and like.
+-  created a Blog application with Django that allows users to create, edit and delete posts.
+- The homepage lists all blog posts and each post has a dedicated detail page for comments and likes.
 
 ## Contact
 
