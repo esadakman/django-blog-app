@@ -4,14 +4,13 @@
 
 <div align="center">
   <h3>
-    <a href="https://esadakman-pizza-app.herokuapp.com/order/">
+    <a href="http://esadd.pythonanywhere.com/">
       Demo
     </a>
      | 
     <a href="https://github.com/esadakman/django-blog-app">
       Project
-    </a>
- 
+    </a> 
   </h3>
 </div>
 
@@ -30,8 +29,7 @@
 
 ## Overview
 
- 
-
+![dj-blog-app](https://user-images.githubusercontent.com/98649983/190132200-98912acc-fc58-4c6d-a744-f1a28fba731e.gif)
 
 ### Built With
 
@@ -42,6 +40,7 @@
 - JS
 - Django
 - Bootstrap
+- SASS
 
 ## How To Use 
 
@@ -65,7 +64,8 @@ $ git clone https://github.com/esadakman/django-blog-app
 
 ## Acknowledgements
 
--  
+- I build a Blog application with Django that allows users to create, edit and delete posts,
+- The home page lists all blog posts, and there is a dedicated detail page for each individual post, comment and like.
 
 ## Contact
 
