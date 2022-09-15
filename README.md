@@ -4,9 +4,9 @@
 
 <div align="center">
   <h3>
-    <a href="http://esadd.pythonanywhere.com/">
+    <!-- <a href="http://esadd.pythonanywhere.com/">
       Demo
-    </a>
+    </a> -->
      | 
     <a href="https://github.com/esadakman/django-blog-app">
       Project
@@ -20,7 +20,7 @@
 
 - [Overview](#overview)
 - [Built With](#built-with)
-- [Features](#features)
+- [Project Structure](#project-structure)
 - [How to use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
@@ -41,6 +41,80 @@
 - Django
 - Bootstrap
 - SASS
+
+## Project Structure
+
+```bash
+.──── django-blog-app (repo)
+│
+├── main
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+│─── blog
+│     │── __init__.py
+│     ├── __pycache__
+│     ├── admin.py
+│     ├── apps.py
+│     ├── migrations
+│     ├── models.py
+│     ├── static
+│     │   └── blog
+│     │       ├── images
+│     │       │   └── logo.png
+│     │       ├── css
+│     │       │   ├── main.scss
+│     │       │   └── style.css
+│     │       └── js
+│     │           └── app.js
+│     ├── templates
+│     │   └── blog
+│     │       ├── home.html
+│     │       ├── likes_area.html
+│     │       ├── post_confirm_delete.html
+│     │       ├── post_detail.html
+│     │       ├── post_form.html
+│     │       └── post_detail.html
+│     ├── tests.py
+│     ├── urls.py
+│     └── views.py
+├──── users
+│      ├── __init__.py
+│      ├── __pycache__
+│      ├── admin.py
+│      ├── migrations
+│      ├── apps.py
+│      ├── forms.py
+│      ├── models.py
+│      ├── signals.py
+│      ├── models.py 
+│      ├── templates
+│      │   └── users
+│      │       ├── login.html
+│      │       ├── profile.html 
+│      │       └── register.html
+│      ├── tests.py
+│      ├── urls.py
+│      └── views.py
+│─── templates
+│      ├── base.html
+│      ├── footer.html
+│      └── navbar.html
+├─── media
+│      ├── profile_pics
+│      ├── user_directory_path
+│      ├── blog_default_png
+│      └── default.webp
+├── manage.py
+├── db.sqlite3
+├── requirements.txt
+└── .env
+
+```
 
 ## How To Use 
 
@@ -64,7 +138,7 @@ $ git clone https://github.com/esadakman/django-blog-app
 
 ## Acknowledgements
 
--  created a Blog application with Django that allows users to create, edit and delete posts.
+- Created a Blog application with Django that allows users to create, edit and delete posts.
 - The homepage lists all blog posts and each post has a dedicated detail page for comments and likes.
 
 ## Contact
