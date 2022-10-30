@@ -14,8 +14,7 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Project Info](#projectinfo)
+- [Overview](#overview) 
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Preview](#preview-of-the-project)
 - [Built With](#built-with)
@@ -29,17 +28,16 @@
 
 - Created a Blog application with Django that allows users to create, edit and delete posts.
 - The homepage lists all blog posts and each post has a dedicated detail page for comments and likes.
-- Notions I have learned from this projects are includes authentication, database relations, Class based views and Function based views, Django Template language, and HTMX.
-
-## Project Info
-
+- Notions I have learned from this projects are includes authentication, database relations, Class based views and Function based views, Django Template language, and HTMX. 
 ## Entity Relationship Diagram
 
 ![erd](https://user-images.githubusercontent.com/98649983/198892540-6e108212-3346-4cc7-aa9e-b21f08ae26f0.jpg)
 
 ## Preview of the Project
 
-![dj-blog-app](https://user-images.githubusercontent.com/98649983/190132200-98912acc-fc58-4c6d-a744-f1a28fba731e.gif)
+<img src="./django-blog-gif.gif" alt="blog-gif" />
+
+<!-- ![dj-blog-app](https://user-images.githubusercontent.com/98649983/190132200-98912acc-fc58-4c6d-a744-f1a28fba731e.gif) -->
 
 ### Built With
 
