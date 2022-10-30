@@ -3,13 +3,9 @@
 <h1 align="center">Django Blog App</h1>
 
 <div align="center">
-  <h3>
-    <!-- <a href="http://esadd.pythonanywhere.com/">
-      Demo
-    </a> -->
-     | 
+  <h3> 
     <a href="https://github.com/esadakman/django-blog-app">
-      Project
+      👉 Project Link 👈
     </a> 
   </h3>
 </div>
@@ -19,15 +15,29 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [Project Info](#projectinfo)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
+- [Preview](#preview-of-the-project)
 - [Built With](#built-with)
 - [Project Structure](#project-structure)
 - [How to use](#how-to-use)
-- [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
 <!-- OVERVIEW -->
 
 ## Overview
+
+- Created a Blog application with Django that allows users to create, edit and delete posts.
+- The homepage lists all blog posts and each post has a dedicated detail page for comments and likes.
+- Notions I have learned from this projects are includes authentication, database relations, Class based views and Function based views, Django Template language, and HTMX.
+
+## Project Info
+
+## Entity Relationship Diagram
+
+![erd](https://user-images.githubusercontent.com/98649983/198892540-6e108212-3346-4cc7-aa9e-b21f08ae26f0.jpg)
+
+## Preview of the Project
 
 ![dj-blog-app](https://user-images.githubusercontent.com/98649983/190132200-98912acc-fc58-4c6d-a744-f1a28fba731e.gif)
 
@@ -91,11 +101,11 @@
 │      ├── forms.py
 │      ├── models.py
 │      ├── signals.py
-│      ├── models.py 
+│      ├── models.py
 │      ├── templates
 │      │   └── users
 │      │       ├── login.html
-│      │       ├── profile.html 
+│      │       ├── profile.html
 │      │       └── register.html
 │      ├── tests.py
 │      ├── urls.py
@@ -116,7 +126,7 @@
 
 ```
 
-## How To Use 
+## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com)
 
@@ -131,15 +141,11 @@ $ git clone https://github.com/esadakman/django-blog-app
     $ pip install -r requirements.txt
 
 # Add .env file for secret key
+    add your SECRET_KEY in a .env file
 
 # Run the app
     $ python manage.py runserver
 ```
-
-## Acknowledgements
-
-- Created a Blog application with Django that allows users to create, edit and delete posts.
-- The homepage lists all blog posts and each post has a dedicated detail page for comments and likes.
 
 ## Contact
 
