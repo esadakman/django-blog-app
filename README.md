@@ -1,10 +1,11 @@
+# Full Stack - Blog App - Backend
 <!-- Please update value in the {}  -->
 
 <h1 align="center">Django Blog App</h1>
 
 <div align="center">
   <h3> 
-    <a href="https://github.com/esadakman/django-blog-app">
+    <a href="https://esadd.pythonanywhere.com/">
       👉 Project Link 👈
     </a> 
   </h3>
@@ -31,7 +32,8 @@
 - Notions I have learned from this projects are includes authentication, database relations, Class based views and Function based views, Django Template language, and HTMX. 
 ## Entity Relationship Diagram
 
-![erd](https://user-images.githubusercontent.com/98649983/198892540-6e108212-3346-4cc7-aa9e-b21f08ae26f0.jpg)
+<!-- ![erd](https://user-images.githubusercontent.com/98649983/198892540-6e108212-3346-4cc7-aa9e-b21f08ae26f0.jpg) -->
+<img src="./erd.jpg" alt="erd" />
 
 ## Preview of the Project
 
